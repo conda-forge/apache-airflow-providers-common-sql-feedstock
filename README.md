@@ -1,11 +1,11 @@
-About apache-airflow-providers-common-sql
-=========================================
+About apache-airflow-providers-common-sql-feedstock
+===================================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/apache-airflow-providers-common-sql-feedstock/blob/main/LICENSE.txt)
 
 Home: https://airflow.apache.org/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/apache-airflow-providers-common-sql-feedstock/blob/main/LICENSE.txt)
 
 Summary: Provider for Apache Airflow. Implements apache-airflow-providers-common-sql package
 
