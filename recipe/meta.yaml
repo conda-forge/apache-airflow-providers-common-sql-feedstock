@@ -26,7 +26,7 @@ requirements:
 
 test:
   imports:
-    - apache_airflow_providers_common_sql
+    - airflow.providers.common.sql
   commands:
     - pip check
   requires:
