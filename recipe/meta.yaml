@@ -23,6 +23,7 @@ requirements:
     - more-itertools >=9.0.0
     - python >=3.8
     - apache-airflow >=2.6.0
+    - more-itertools >=9.0.0
     - sqlparse >=0.4.2
 
 test:
