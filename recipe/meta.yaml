@@ -22,8 +22,8 @@ requirements:
   run:
     - python >={{ python_min }}
     - apache-airflow >=2.9.0
-    - more-itertools >=9.0.0
     - sqlparse >=0.5.1
+    - more-itertools >=9.0.0
 
 test:
   imports:
@@ -38,6 +38,7 @@ about:
   home: https://airflow.apache.org/
   summary: Provider package apache-airflow-providers-common-sql for Apache Airflow
   license: Apache-2.0
+  license_file: src/airflow/providers/common/sql/LICENSE
   license_file: airflow/providers/common/sql/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-common-sql/stable/index.html
