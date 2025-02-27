@@ -39,7 +39,6 @@ about:
   summary: Provider package apache-airflow-providers-common-sql for Apache Airflow
   license: Apache-2.0
   license_file: src/airflow/providers/common/sql/LICENSE
-  license_file: airflow/providers/common/sql/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-common-sql/stable/index.html
   dev_url: https://github.com/apache/airflow/
