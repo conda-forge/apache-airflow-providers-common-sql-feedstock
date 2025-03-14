@@ -17,7 +17,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core ==3.10.1
+    - flit-core ==3.11.0
     - pip
   run:
     - methodtools >=0.4.7
@@ -25,6 +25,7 @@ requirements:
     - apache-airflow >=2.9.0
     - sqlparse >=0.5.1
     - more-itertools >=9.0.0
+    - methodtools >=0.4.7
 
 test:
   imports:
