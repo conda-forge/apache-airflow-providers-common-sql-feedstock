@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-common-sql" %}
-{% set version = "1.26.0" %}
+{% set version = "1.27.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_common_sql-{{ version }}.tar.gz
-  sha256: 5b0cfdcbd54b7439c7d36f9db733e678c5f264967260f8e9c75f2d7c0275aa66
+  sha256: 1d4bc2ed6fc0c3f297c55ef100d0e3b7e27bb112877b1e51f8a072f689ceba41
 
 build:
   noarch: python
@@ -22,7 +22,7 @@ requirements:
   run:
     - methodtools >=0.4.7
     - python >={{ python_min }}
-    - apache-airflow >=2.9.0
+    - apache-airflow >=2.10.0
     - sqlparse >=0.5.1
     - more-itertools >=9.0.0
     - methodtools >=0.4.7
