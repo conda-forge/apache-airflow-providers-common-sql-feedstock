@@ -14,10 +14,6 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
 
-requirements:
-  host:
-    - python {{ python_min }}
-
 outputs:
   - name: {{ name }}
     script: install_airflow_providers_common_sql.sh
