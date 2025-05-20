@@ -59,7 +59,7 @@ outputs:
 
     test:
       imports:
-        - airflow.providers.amazon
+        - airflow.providers.common.sql
       commands:
         - pip check
       requires:
@@ -80,7 +80,7 @@ outputs:
 
     test:
       imports:
-        - airflow.providers.amazon
+        - airflow.providers.common.sql
       commands:
         - pip check
       requires:
@@ -101,7 +101,7 @@ outputs:
 
     test:
       imports:
-        - airflow.providers.amazon
+        - airflow.providers.common.sql
       commands:
         - pip check
       requires:
