@@ -1,5 +1,5 @@
-About apache-airflow-providers-common-sql-feedstock
-===================================================
+About apache-airflow-providers-common-sql-split-feedstock
+=========================================================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/apache-airflow-providers-common-sql-feedstock/blob/main/LICENSE.txt)
 
@@ -32,27 +32,30 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-apache--airflow--providers--common--sql-green.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/apache-airflow-providers-common-sql.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/apache-airflow-providers-common-sql.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/apache-airflow-providers-common-sql.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-apache--airflow--providers--common--sql--with--openlineage-green.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-openlineage) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/apache-airflow-providers-common-sql-with-openlineage.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-openlineage) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/apache-airflow-providers-common-sql-with-openlineage.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-openlineage) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/apache-airflow-providers-common-sql-with-openlineage.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-openlineage) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-apache--airflow--providers--common--sql--with--pandas-green.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-pandas) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/apache-airflow-providers-common-sql-with-pandas.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-pandas) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/apache-airflow-providers-common-sql-with-pandas.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-pandas) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/apache-airflow-providers-common-sql-with-pandas.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-pandas) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-apache--airflow--providers--common--sql--with--polars-green.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-polars) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/apache-airflow-providers-common-sql-with-polars.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-polars) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/apache-airflow-providers-common-sql-with-polars.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-polars) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/apache-airflow-providers-common-sql-with-polars.svg)](https://anaconda.org/conda-forge/apache-airflow-providers-common-sql-with-polars) |
 
-Installing apache-airflow-providers-common-sql
-==============================================
+Installing apache-airflow-providers-common-sql-split
+====================================================
 
-Installing `apache-airflow-providers-common-sql` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `apache-airflow-providers-common-sql-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `apache-airflow-providers-common-sql` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `apache-airflow-providers-common-sql, apache-airflow-providers-common-sql-with-openlineage, apache-airflow-providers-common-sql-with-pandas, apache-airflow-providers-common-sql-with-polars` can be installed with `conda`:
 
 ```
-conda install apache-airflow-providers-common-sql
+conda install apache-airflow-providers-common-sql apache-airflow-providers-common-sql-with-openlineage apache-airflow-providers-common-sql-with-pandas apache-airflow-providers-common-sql-with-polars
 ```
 
 or with `mamba`:
 
 ```
-mamba install apache-airflow-providers-common-sql
+mamba install apache-airflow-providers-common-sql apache-airflow-providers-common-sql-with-openlineage apache-airflow-providers-common-sql-with-pandas apache-airflow-providers-common-sql-with-polars
 ```
 
 It is possible to list all of the versions of `apache-airflow-providers-common-sql` available on your platform with `conda`:
@@ -122,17 +125,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating apache-airflow-providers-common-sql-feedstock
-======================================================
+Updating apache-airflow-providers-common-sql-split-feedstock
+============================================================
 
-If you would like to improve the apache-airflow-providers-common-sql recipe or build a new
+If you would like to improve the apache-airflow-providers-common-sql-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/apache-airflow-providers-common-sql-feedstock are
+Note that all branches in the conda-forge/apache-airflow-providers-common-sql-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
