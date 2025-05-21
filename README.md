@@ -152,6 +152,3 @@ Feedstock Maintainers
 
 * [@xylar](https://github.com/xylar/)
 
-
-<!-- dummy commit to enable rerendering -->
-
