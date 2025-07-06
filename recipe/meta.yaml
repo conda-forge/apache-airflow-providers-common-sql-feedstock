@@ -1,5 +1,6 @@
 {% set name = "apache-airflow-providers-common-sql" %}
 {% set version = "1.27.3" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}-split
