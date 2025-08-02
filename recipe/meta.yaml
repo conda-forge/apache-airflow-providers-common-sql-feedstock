@@ -51,7 +51,8 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
-        - pandas >=2.1.2,<2.2
+        # more restrictive for python >=3.13
+        - pandas >=2.2.3
 
     test:
       imports:
