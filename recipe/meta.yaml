@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-common-sql" %}
 {% set version = "1.28.0" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}-split
@@ -53,6 +52,7 @@ outputs:
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
         # more restrictive for python >=3.13
         - pandas >=2.2.3
+        # leaving out pandas[sql-other] extra for now because it is not there for python >=3.13
 
     test:
       imports:
