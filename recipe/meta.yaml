@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-common-sql" %}
-{% set version = "1.28.2" %}
+{% set version = "1.29.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_common_sql-{{ version }}.tar.gz
-  sha256: 0df29f47116558d59f998b8236fbe3dc3d97e79995ad14b311bb5a7a6541da18
+  sha256: 12fcf5fb3b5863e5bc816f0ba5d446bdf6bea324e6ac237083d212e644359c66
 
 build:
   noarch: python
@@ -27,6 +27,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - apache-airflow >=2.10.0
+        - apache-airflow-providers-common-compat >=1.8.0
         - sqlparse >=0.5.1
         - more-itertools >=9.0.0
         - methodtools >=0.4.7
@@ -106,10 +107,12 @@ outputs:
         - pip
 
 about:
-  home: https://airflow.apache.org/
+  home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-common-sql for Apache Airflow
   license: Apache-2.0
-  license_file: src/airflow/providers/common/sql/LICENSE
+  license_file:
+    - LICENSE
+    - NOTICE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-common-sql/stable/index.html
   dev_url: https://github.com/apache/airflow/
