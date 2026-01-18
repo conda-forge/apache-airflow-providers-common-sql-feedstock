@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-common-sql" %}
-{% set version = "1.30.2" %}
+{% set version = "1.30.3" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_common_sql-{{ version }}.tar.gz
-  sha256: a501ca6e949c8cd3eb8d55b3a1d266e8e9eb0cbb00a0bd8dc0416e75eba98b7b
+  sha256: 91a301d906e05e2409d834b547822545025cbc2773e763df5546147fd48ec94f
 
 build:
   noarch: python
