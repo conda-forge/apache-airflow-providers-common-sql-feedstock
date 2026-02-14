@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: apache-airflow-providers-common-sql
-  version: "1.30.4"
+  version: "1.31.0"
 
 recipe:
   name: ${{ name|lower }}-split
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_common_sql-${{ version }}.tar.gz
-  sha256: 706e4b9e07c67357605b8ddca42d5215f04c9ba27e25f44228fd792788c20f21
+  sha256: c873a3d6f78999405d07568ee7f68823133c843420cf391e049ff24512fb3822
 
 build:
   number: 0
