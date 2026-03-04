@@ -104,7 +104,7 @@ outputs:
   #     run:
   #       - python >=${{ python_min }}
   #       - ${{ pin_subpackage(name, upper_bound='x.x.x.x.x.x') }}
-  #       - sqlalchemy >=1.4.49
+  #       - sqlalchemy >=1.4.54
   #   tests:
   #     - python:
   #         imports:
