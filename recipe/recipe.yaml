@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: apache-airflow-providers-common-sql
-  version: "1.31.0"
+  version: "1.32.0"
 
 recipe:
   name: ${{ name|lower }}-split
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_common_sql-${{ version }}.tar.gz
-  sha256: c873a3d6f78999405d07568ee7f68823133c843420cf391e049ff24512fb3822
+  sha256: 631bd9bf7fcec817eeb8fd19804f194a9c61762e4f4b7ec41674c9da7e1021bd
 
 build:
   number: 0
@@ -104,7 +104,7 @@ outputs:
   #     run:
   #       - python >=${{ python_min }}
   #       - ${{ pin_subpackage(name, upper_bound='x.x.x.x.x.x') }}
-  #       - sqlalchemy >=1.4.49
+  #       - sqlalchemy >=1.4.54
   #   tests:
   #     - python:
   #         imports:
