@@ -1,11 +1,10 @@
-schema_version: 1
-
 context:
   name: apache-airflow-providers-common-sql
   version: "1.33.0"
+  latest_airflow: 3.1.8
 
 recipe:
-  name: ${{ name|lower }}-split
+  name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
@@ -13,6 +12,7 @@ source:
   sha256: ad53e3e84d05baa12f12ee5966b6a4d83ca74c74804b2b173884768561272928
 
 build:
+  noarch: python
   number: 0
 
 outputs:
@@ -20,45 +20,29 @@ outputs:
       name: ${{ name }}
     build:
       noarch: python
-      script:
-        file: install_airflow_providers_common_sql.sh
+      script: python -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python ${{ python_min }}.*
-        - flit-core ==3.12.0
         - pip
+        - flit-core ==3.12.0
       run:
         - python >=${{ python_min }}
         - apache-airflow >=2.11.0
-        - apache-airflow-providers-common-compat >=1.12.0
+        - apache-airflow-providers-common-compat >=1.14.1
         - sqlparse >=0.5.1
         - more-itertools >=9.0.0
         - methodtools >=0.4.7
     tests:
-      - python:
-          imports:
-            - airflow.providers.common.sql
-          pip_check: true
-          python_version: ${{ python_min }}.*
-    # leaving out pandas[sql-other] extra for now because it is not there for python >=3.13
-  - package:
-      name: ${{ name }}-with-pandas
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python ${{ python_min }}.*
-      run:
-        - python >=${{ python_min }}
-        - ${{ pin_subpackage(name, upper_bound='x.x.x.x.x.x') }}
-        # more restrictive for python >=3.13
-        - pandas >=2.2.3
-    tests:
-      - python:
-          imports:
-            - airflow.providers.common.sql
-          pip_check: true
-          python_version: ${{ python_min }}.*
+      - requirements:
+          run:
+            - python ${{ python_min }}.*
+            - pip
+            - apache-airflow ${{ latest_airflow }}.*
+        script:
+          - python -c "import airflow.providers.common.sql"
+          - pip check
+
   - package:
       name: ${{ name }}-with-openlineage
     build:
@@ -68,14 +52,43 @@ outputs:
         - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
-        - ${{ pin_subpackage(name, upper_bound='x.x.x.x.x.x') }}
+        - ${{ pin_subpackage(name, exact=True) }}
         - apache-airflow-providers-openlineage
     tests:
-      - python:
-          imports:
-            - airflow.providers.common.sql
-          pip_check: true
-          python_version: ${{ python_min }}.*
+      - requirements:
+          run:
+            - python ${{ python_min }}.*
+            - pip
+            - apache-airflow ${{ latest_airflow }}.*
+        script:
+          - python -c "import airflow.providers.common.sql"
+          - pip check
+
+  - package:
+      name: ${{ name }}-with-pandas
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+      run:
+        - python >=${{ python_min }}
+        - ${{ pin_subpackage(name, exact=True) }}
+        - pandas >=2.1.2
+        # start pandas[sql-other]
+        # end pandas[sql-other]
+        # conditional for python >=3.13
+        - pandas >=2.2.3
+    tests:
+      - requirements:
+          run:
+            - python ${{ python_min }}.*
+            - pip
+            - apache-airflow ${{ latest_airflow }}.*
+        script:
+          - python -c "import airflow.providers.common.sql"
+          - pip check
+
   - package:
       name: ${{ name }}-with-polars
     build:
@@ -85,42 +98,37 @@ outputs:
         - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
-        - ${{ pin_subpackage(name, upper_bound='x.x.x.x.x.x') }}
+        - ${{ pin_subpackage(name, exact=True) }}
         - polars >=1.26.0
     tests:
-      - python:
-          imports:
-            - airflow.providers.common.sql
-          pip_check: true
-          python_version: ${{ python_min }}.*
-  # Let's only add this if someone needs it
-  # - package:
-  #     name: ${{ name }}-with-sqlalchemy
-  #   build:
-  #     noarch: python
-  #   requirements:
-  #     host:
-  #       - python ${{ python_min }}.*
-  #     run:
-  #       - python >=${{ python_min }}
-  #       - ${{ pin_subpackage(name, upper_bound='x.x.x.x.x.x') }}
-  #       - sqlalchemy >=1.4.54
-  #   tests:
-  #     - python:
-  #         imports:
-  #           - airflow.providers.common.sql
-  #         pip_check: true
-  #         python_version: ${{ python_min }}.*
+      - requirements:
+          run:
+            - python ${{ python_min }}.*
+            - pip
+            - apache-airflow ${{ latest_airflow }}.*
+        script:
+          - python -c "import airflow.providers.common.sql"
+          - pip check
+
+  # skipping output amazon
+
+  # skipping output apache.iceberg
+
+  # skipping output datafusion
+
+  # skipping output pyiceberg-core
+
+  # skipping output sqlalchemy
 
 about:
+  homepage: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-common-sql for Apache Airflow
   license: Apache-2.0
   license_file:
     - LICENSE
     - NOTICE
-  homepage: https://github.com/apache/airflow/tree/main/providers/common/sql
-  repository: https://github.com/apache/airflow/
   documentation: https://airflow.apache.org/docs/apache-airflow-providers-common-sql/stable/index.html
+  repository: https://github.com/apache/airflow/
 
 extra:
   recipe-maintainers:
