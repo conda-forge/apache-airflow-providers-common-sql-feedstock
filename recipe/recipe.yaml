@@ -76,6 +76,9 @@ outputs:
         - ${{ pin_subpackage(name, exact=True) }}
         - pandas >=2.1.2
         # start pandas[sql-other]
+        - sqlalchemy >=2.0.36
+        - adbc-driver-postgresql >=1.2.0
+        - adbc-driver-sqlite >=1.2.0
         # end pandas[sql-other]
         # conditional for python >=3.13
         - pandas >=2.2.3
