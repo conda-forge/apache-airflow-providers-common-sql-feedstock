@@ -82,6 +82,8 @@ outputs:
         # end pandas[sql-other]
         # conditional for python >=3.13
         - pandas >=2.2.3
+        # conditional for python >=3.14
+        - pandas >=2.3.3
     tests:
       - requirements:
           run:
