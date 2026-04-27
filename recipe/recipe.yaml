@@ -1,7 +1,7 @@
 context:
   name: apache-airflow-providers-common-sql
   version: "1.35.0"
-  latest_airflow: 3.1.8
+  latest_airflow: 2.11.1
 
 recipe:
   name: ${{ name|lower }}
@@ -74,16 +74,13 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name, exact=True) }}
-        - pandas >=2.1.2
+        # more restrictive for python >=3.14
+        - pandas >=2.3.3
         # start pandas[sql-other]
         - sqlalchemy >=2.0.36
         - adbc-driver-postgresql >=1.2.0
         - adbc-driver-sqlite >=1.2.0
         # end pandas[sql-other]
-        # conditional for python >=3.13
-        - pandas >=2.2.3
-        # conditional for python >=3.14
-        - pandas >=2.3.3
     tests:
       - requirements:
           run:
