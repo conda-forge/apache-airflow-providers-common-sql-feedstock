@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-common-sql
-  version: "1.34.0"
+  version: "1.35.0"
   latest_airflow: 3.1.8
 
 recipe:
@@ -9,7 +9,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_common_sql-${{ version }}.tar.gz
-  sha256: 6cfe05d53680a9d712ef02186cce8beb6bb007e6e4bcc5e04b01db6e28073d0c
+  sha256: 555a2b3424156907d0d5aebb6749da6c67cd9511aa7f59990028d0ffd58c16cb
 
 build:
   noarch: python
@@ -74,16 +74,13 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name, exact=True) }}
-        - pandas >=2.1.2
+        # more restrictive for python >=3.14
+        - pandas >=2.3.3
         # start pandas[sql-other]
         - sqlalchemy >=2.0.36
         - adbc-driver-postgresql >=1.2.0
         - adbc-driver-sqlite >=1.2.0
         # end pandas[sql-other]
-        # conditional for python >=3.13
-        - pandas >=2.2.3
-        # conditional for python >=3.14
-        - pandas >=2.3.3
     tests:
       - requirements:
           run:
