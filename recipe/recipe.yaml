@@ -1,7 +1,7 @@
 context:
   name: apache-airflow-providers-common-sql
   version: "2.0.0"
-  latest_airflow: 3.1.8
+  latest_airflow: 3.2.1
 
 recipe:
   name: ${{ name|lower }}
