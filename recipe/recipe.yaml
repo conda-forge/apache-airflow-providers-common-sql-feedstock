@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-common-sql
-  version: "2.0.3"
+  version: "2.1.0"
   latest_airflow: 3.3.0
 
 recipe:
@@ -9,7 +9,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_common_sql-${{ version }}.tar.gz
-  sha256: 3341e191cc8659f58f6c106e429c644c87ccf5dd9174c43b8ec617c6ea679a18
+  sha256: 2c6053a2753596df2fce834da39d6095063dfae28f417291997b203b60692b9f
 
 build:
   noarch: python
